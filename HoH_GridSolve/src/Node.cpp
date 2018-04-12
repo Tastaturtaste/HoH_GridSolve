@@ -7,7 +7,7 @@ Node::Node(bool lit, bool pressed)
 
 void Node::Eval(std::vector<Node> neighbors)
 {
-	unsigned int switches = (lit) ? 1 : 0;
+	lit = pressed ? true : false;
 	for (Node node : neighbors)
 		if (node.pressed)
 			lit = !lit;
@@ -15,7 +15,7 @@ void Node::Eval(std::vector<Node> neighbors)
 
 bool Node::operator==(const Node & other) const
 {
-	return lit == other.lit || pressed == other.pressed;
+	return lit == other.lit && pressed == other.pressed;
 }
 
 bool Node::operator!=(const Node & other) const
