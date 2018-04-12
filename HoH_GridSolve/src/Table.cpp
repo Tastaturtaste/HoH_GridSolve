@@ -35,7 +35,7 @@ std::vector<Node> Table::GetNeighbors(unsigned int index)
 		neighbors.push_back(nodes[index - size]);
 	if (index % size != size - 1)
 		neighbors.push_back(nodes[index + 1]);
-	if (index <= size * (size - 2))
+	if (index + size < nodes.size())
 		neighbors.push_back(nodes[index + size]);
 	if (index % size != 0)
 		neighbors.push_back(nodes[index - 1]);

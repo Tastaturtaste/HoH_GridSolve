@@ -42,11 +42,15 @@ int main()
 		{
 			table.nodes[i].pressed = bs[i];
 
-			std::cout << table.nodes[i].lit << " ";
-			if (i % table.size == table.size - 1)
-				std::cout << "\n";
+			#ifdef DEBUG
+				std::cout << table.nodes[i].pressed << " ";
+				if (i % table.size == table.size - 1)
+					std::cout << "\n";
 				if (i == table.nodes.size() - 1)
 					std::cout << "\n\n\n";
+			#endif // DEBUG
+
+
 		}
 		if (CheckSolution(table))
 			solutions.push_back(table);
